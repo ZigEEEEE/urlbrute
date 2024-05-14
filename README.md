@@ -1,6 +1,8 @@
 # urlbrute
 This is a command line tool for finding possible paths of a given URL using either word list, random or common paths.
 
+This tool is primarily to generate a list of paths for sites with no/limited sitemaps.
+
 The code is designed to take full advantage of the hardware available as it has the ability to run in multi-threaded mode.
 
 The main wordlist can be edited in a standard text editor and is named "wordlist.txt".
