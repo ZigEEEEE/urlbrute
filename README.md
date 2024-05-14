@@ -52,3 +52,11 @@ However, this example will try all words in the English dictionary as paths on t
 python urlbrute.py -u "https://google.com" -D y -w 1
 ```
 The output looks like this:
+```
+Took too long, I am lazy.
+```
+This example will try all words in the English dictionary as paths on the site youtube.com, with no wait time and 26 threads (the only available number of threads for this mode).
+```
+python urlbrute.py -u "https://youtube.com" -D y -w 0 -t 26
+```
+This was significantly quicker and outputed:
