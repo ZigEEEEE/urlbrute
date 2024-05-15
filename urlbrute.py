@@ -9,6 +9,7 @@ import argparse
 
 ico = "                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@      @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@  @@  @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@      @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n@@@@@@@@@@@@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n  @@@@@@@@@@      @@@@@@@@@@@@      @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                    @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
 
+#arguments for tool options
 parser = argparse.ArgumentParser(description='For exploring sites and their paths')
 parser.add_argument('-C', '--common_mode', required=False, help='A pre-defined list of common URL paths, path of file must be specified', default="")
 parser.add_argument('-R', '--rand_mode', required=False, help='A random string will be tried as a path, number of attempts must be specified', default=0)
@@ -27,6 +28,7 @@ hits = []
 alpha_num = ["None", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 if args.guided == True:
+    #guided mode interface
     domain = input("Domain:\n")
 
     common_mode = input("Search for common URL paths? (y/n)\n")
@@ -35,6 +37,7 @@ if args.guided == True:
     verbose_mode = input("Verbose mode? (y/n)\n")
     delay = float(input("Delay for each search query: (seconds)\n"))
 else:
+    #argument to variable conversion
     domain = args.url
     common_mode = args.common_mode
     dict_mode = args.dict_mode
@@ -44,14 +47,17 @@ else:
     threads = int(args.multi_threading)
     search_list = eval("["+args.exclude+"]")
 
+#setting defaults if input is not sufficient
 if common_mode == "default" or common_mode == "Default" or common_mode == "y" or common_mode == "Y":
     common_mode = "common paths.txt"
 if dict_mode == "default" or dict_mode == "Default" or dict_mode == "y" or dict_mode == "Y":
     dict_mode = "wordlist.txt"
 
+#common word search mode
 def search_common():
-    commonlist = open("common paths.txt", "r")
+    commonlist = open(common_mode, "r")
     common = commonlist.read().split("\n")
+    commonlist.close()
     for x in range(0, len(common)):
         if verbose_mode == "y" or verbose_mode == "Y":
             print("Searching "+domain+"/"+common[x])
@@ -64,9 +70,11 @@ def search_common():
             hits.append([common[x], r])
         time.sleep(delay)
 
+#SINGLE THREADED dictionary search
 def search_dict():
-    wordlist = open("wordlist.txt", "r")
+    wordlist = open(dict_mode, "r")
     words = wordlist.read().split("\n")
+    wordlist.close()
     for x in range(0, len(words)):
         if verbose_mode == "y" or verbose_mode == "Y":
             print("Searching "+domain+"/"+words[x])
@@ -79,9 +87,11 @@ def search_dict():
             hits.append([words[x], r])
         time.sleep(delay)
 
+#MULTI THREADED dictionary search
 def search_dict_threaded(letter):
     wordlist = open("wordlist - "+alpha_num[letter]+".txt", "r")
     words = wordlist.read().split("\n")
+    wordlist.close()
     for x in range(0, len(words)):
         if verbose_mode == "y" or verbose_mode == "Y":
             print("Searching "+domain+"/"+words[x])
@@ -94,6 +104,7 @@ def search_dict_threaded(letter):
             hits.append([words[x], r])
         time.sleep(delay)
 
+#random search
 def search_rand():
     for x in range(0, rand_mode):
         rand_string = str(''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(random.randint(1, 10))))
@@ -108,6 +119,7 @@ def search_rand():
             hits.append([rand_string, r])
         time.sleep(delay)
 
+#Using argument inputs to enable/diable each relevent mode
 if common_mode != "":
     search_common()
 
@@ -135,6 +147,7 @@ if rand_mode != 0:
         thread.join()
     search_rand()
 
+#Simple output code
 print("\n------------------------------RESULTS------------------------------")
 print("There were "+str(len(hits))+" results:\n")
 for x in range(0, len(hits)):
