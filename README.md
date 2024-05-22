@@ -5,9 +5,7 @@ This tool is primarily to generate a list of paths for sites with no/limited sit
 
 The code is designed to take full advantage of the hardware available as it has the ability to run in multi-threaded mode.
 
-The main wordlist can be edited in a standard text editor and is named "wordlist.txt".
-
-However, modifying the wordlist for multi-threaded mode is slightly more difficult as it contains seperate wordlists for each letter of the alphabet (eg. "wordlist - a.txt" for the letter a).
+The main (default) wordlist can be edited in a standard text editor and is named "wordlist.txt".
 
 ## Requirements:
 - requests (python module)
@@ -61,4 +59,8 @@ This example will try all words in the English dictionary as paths on the site y
 ```
 python urlbrute.py -u "https://youtube.com" -D y -w 0 -t 26
 ```
-This was significantly quicker and outputed:
+
+## Credits:
+- Two wordlists have been included in this repo, they are "google-10000-english.txt" and "20k.txt".
+  
+  They both belong to https://github.com/first20hours/google-10000-english/tree/master.
