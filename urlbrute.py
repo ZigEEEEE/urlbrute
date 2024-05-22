@@ -9,10 +9,12 @@ import argparse
 
 ico = "                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@      @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@  @@  @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@      @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n@@@@@@@@@@@@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n  @@@@@@@@@@      @@@@@@@@@@@@      @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                    @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
 
+save_data = ""
+
 alphabet_wordlist_conv = "abcdefghijklmnopqrstuvwxyz"
 
 #arguments for tool options
-parser = argparse.ArgumentParser(description='For exploring sites and their paths. This is a command line tool for finding possible paths of a given URL using either word list, random or common paths. This tool is primarily to generate a list of paths for sites with no/limited sitemaps.')
+parser = argparse.ArgumentParser(description='For exploring sites and their paths. This is a command line tool for finding possible paths of a given URL using either word list, random or commonpaths. This tool is primarily to generate a list of paths for sites with no/limited sitemaps.')
 parser.add_argument('-C', '--common_mode', required=False, help='A pre-defined list of common URL paths, path of file must be specified', default="")
 parser.add_argument('-R', '--rand_mode', required=False, help='A random string will be tried as a path, number of attempts must be specified', default=0)
 parser.add_argument('-D', '--dict_mode', required=False, help='Every word in the English dictionary will be tried as a path, path of file must be specified', default="")
@@ -22,6 +24,7 @@ parser.add_argument('-u', '--url', required=True, help='This is the root URL tha
 parser.add_argument('-w', '--wait', required=True, help='The scheduled delay between attempts')
 parser.add_argument('-v', '--verbose_output', required=False, help='Debug info will be given including thread info')
 parser.add_argument('-e', '--exclude', required=False, help='It will specify the response type that will be counted as a miss.', default="404,403")
+parser.add_argument('-s', '--save', required=False, help='It will save the output in a file, path and file name must be specified', default="")
 
 args = parser.parse_args()
 
@@ -36,6 +39,7 @@ if args.guided == True:
     rand_mode = input("Search for random strings as paths? (y/n)\n")
     verbose_mode = input("Verbose mode? (y/n)\n")
     delay = float(input("Delay for each search query: (seconds)\n"))
+    save_location = input("Would you like to save the output? (path/n)\n")
 else:
     #argument to variable conversion
     domain = args.url
@@ -46,12 +50,15 @@ else:
     delay = float(args.wait)
     threads = int(args.multi_threading)
     search_list = eval("["+args.exclude+"]")
+    save_location = args.save
 
 #setting defaults if input is not sufficient
 if common_mode == "default" or common_mode == "Default" or common_mode == "y" or common_mode == "Y":
-    common_mode = "common paths.txt"
+    common_mode = "commonpaths.txt"
 if dict_mode == "default" or dict_mode == "Default" or dict_mode == "y" or dict_mode == "Y":
     dict_mode = "wordlist.txt"
+if ":" not in domain:
+    domain = "https://"+domain
 
 #common word search mode
 def search_common():
@@ -130,10 +137,16 @@ if dict_mode != "":
         for i in range(1, 26):
             t = threading.Thread(target=search_dict_threaded, args=(i,))
             thread_list.append(t)
+            if verbose_mode == "y" or verbose_mode == "Y":
+                print("Creating thread "+str(i)+"...")
         for thread in thread_list:
             thread.start()
+            if verbose_mode == "y" or verbose_mode == "Y":
+                print("Starting thread "+str(i)+"...")
         for thread in thread_list:
             thread.join()
+            if verbose_mode == "y" or verbose_mode == "Y":
+                print("Joining thread "+str(i)+"...")
     else:
         search_dict()
 
@@ -150,7 +163,18 @@ if rand_mode != 0:
 
 #Simple output code
 print("\n------------------------------RESULTS------------------------------")
+save_data = save_data + "\n------------------------------RESULTS------------------------------\n"
 print("There were "+str(len(hits))+" results:\n")
+save_data = save_data + ("There were "+str(len(hits))+" results:\n")
 for x in range(0, len(hits)):
     print(domain+"/"+str(hits[x][0])+" returned "+str(hits[x][1]))
+    save_data = save_data + (domain+"/"+str(hits[x][0])+" returned "+str(hits[x][1])+"\n")
 print("-------------------------------------------------------------------\n")
+save_data = save_data + "-------------------------------------------------------------------\n"
+
+if save_location != "":
+    f = open(str(save_location), "a")
+    f.write("\n"+str(save_data)+"\n")
+    f.close()
+    if verbose_mode == "y" or verbose_mode == "Y":
+        print("File saved successfuly")
