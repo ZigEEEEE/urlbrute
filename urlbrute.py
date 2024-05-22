@@ -9,8 +9,10 @@ import argparse
 
 ico = "                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@      @@@@    @@@@@@@@@@@@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@      @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@  @@  @@@@                                @@@@    @@@@            @@@@\n@@@@      @@@@    @@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@      @@@@@@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@      @@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n@@@@@@@@@@@@@@    @@@@      @@@@                        @@@@    @@@@    @@@@    @@@@    @@@@\n  @@@@@@@@@@      @@@@@@@@@@@@      @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                    @@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@    @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n                                                        @@@@    @@@@            @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n                @@@@    @@@@            @@@@            @@@@                            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@                            @@@@            @@@@            @@@@    @@@@                \n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@            @@@@                            @@@@                    @@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@    @@@@@@@@@@@@    @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@    @@@@    @@@@    @@@@    @@@@            @@@@    @@@@    @@@@    @@@@            @@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@                                    @@@@                    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n        @@@@    @@@@    @@@@                            @@@@                    @@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@    @@@@@@@@@@@@@@@@@@@@    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@                            @@@@            @@@@    @@@@    @@@@                    @@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@\n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@    @@@@                            @@@@                                    @@@@        \n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
 
+alphabet_wordlist_conv = "abcdefghijklmnopqrstuvwxyz"
+
 #arguments for tool options
-parser = argparse.ArgumentParser(description='For exploring sites and their paths')
+parser = argparse.ArgumentParser(description='For exploring sites and their paths. This is a command line tool for finding possible paths of a given URL using either word list, random or common paths. This tool is primarily to generate a list of paths for sites with no/limited sitemaps.')
 parser.add_argument('-C', '--common_mode', required=False, help='A pre-defined list of common URL paths, path of file must be specified', default="")
 parser.add_argument('-R', '--rand_mode', required=False, help='A random string will be tried as a path, number of attempts must be specified', default=0)
 parser.add_argument('-D', '--dict_mode', required=False, help='Every word in the English dictionary will be tried as a path, path of file must be specified', default="")
@@ -24,8 +26,6 @@ parser.add_argument('-e', '--exclude', required=False, help='It will specify the
 args = parser.parse_args()
 
 hits = []
-
-alpha_num = ["None", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 if args.guided == True:
     #guided mode interface
@@ -89,20 +89,21 @@ def search_dict():
 
 #MULTI THREADED dictionary search
 def search_dict_threaded(letter):
-    wordlist = open("wordlist - "+alpha_num[letter]+".txt", "r")
+    wordlist = open("wordlist.txt", "r")
     words = wordlist.read().split("\n")
     wordlist.close()
     for x in range(0, len(words)):
-        if verbose_mode == "y" or verbose_mode == "Y":
-            print("Searching "+domain+"/"+words[x])
-        r = requests.get(domain+"/"+words[x])
-        if verbose_mode == "y" or verbose_mode == "Y":
-            print(r)
-        if str(r) != "<Response [404]>"  and "404" not in r and int(str(r).split("[")[1].split("]")[0]) not in search_list:
+        if words[x][0] == alphabet_wordlist_conv[letter-1].lower() or words[x][0] == alphabet_wordlist_conv[letter-1].upper():
             if verbose_mode == "y" or verbose_mode == "Y":
-                print("HIT")
-            hits.append([words[x], r])
-        time.sleep(delay)
+                print("Searching "+domain+"/"+words[x])
+            r = requests.get(domain+"/"+words[x])
+            if verbose_mode == "y" or verbose_mode == "Y":
+                print(r)
+            if str(r) != "<Response [404]>"  and "404" not in r and int(str(r).split("[")[1].split("]")[0]) not in search_list:
+                if verbose_mode == "y" or verbose_mode == "Y":
+                    print("HIT")
+                hits.append([words[x], r])
+            time.sleep(delay)
 
 #random search
 def search_rand():
