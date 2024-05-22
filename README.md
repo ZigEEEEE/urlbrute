@@ -25,6 +25,7 @@ The main (default) wordlist can be edited in a standard text editor and is named
 | -v | --verbose_output | Debug info will be given including thread info | n |
 | -w | --wait | The scheduled delay between attempts | 0 |
 | -e | --exclude | It will specify the response type that will be counted as a miss | 404,403 |
+| -s | --save | It will save the output in a file, path and file name must be specified | n |
 
 ## Examples:
 This example will try common paths on the site w3.org, with no wait time between attempts.
