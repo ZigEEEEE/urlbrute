@@ -60,6 +60,77 @@ This example will try all words in the English dictionary as paths on the site y
 ```
 python urlbrute.py -u "https://youtube.com" -D y -w 0 -t 26
 ```
+This example will try all words in the English dictionary as paths on the site google.com, with a wait time of 1 second, 26 threads, debug (verbose) output and file saving.
+```
+python urlbrute.py -u "https://google.com" -D y -w 1 -v y -s out.txt -t 26
+```
+It outputted a whole lot of debug info and finally:
+```
+All searches SUCCESS.
+------------------------------RESULTS------------------------------
+There were 57 results:
+
+https://google.com/m returned <Response [200]>
+https://google.com/s returned <Response [400]>
+https://google.com/racing returned <Response [200]>
+https://google.com/earth returned <Response [200]>
+https://google.com/wallet returned <Response [200]>
+https://google.com/ideas returned <Response [200]>
+https://google.com/made returned <Response [200]>
+https://google.com/keep returned <Response [200]>
+https://google.com/takeout returned <Response [200]>
+https://google.com/ie returned <Response [200]>
+https://google.com/games returned <Response [200]>
+https://google.com/about returned <Response [200]>
+https://google.com/talk returned <Response [200]>
+https://google.com/ramadan returned <Response [200]>
+https://google.com/calendar returned <Response [200]>
+https://google.com/dashboard returned <Response [200]>
+https://google.com/navigation returned <Response [200]>
+https://google.com/jigsaw returned <Response [200]>
+https://google.com/mail returned <Response [200]>
+https://google.com/education returned <Response [200]>
+https://google.com/jobs returned <Response [200]>
+https://google.com/wave returned <Response [200]>
+https://google.com/images returned <Response [200]>
+https://google.com/jump returned <Response [200]>
+https://google.com/federal returned <Response [200]>
+https://google.com/save returned <Response [200]>
+https://google.com/saved returned <Response [200]>
+https://google.com/video returned <Response [200]>
+https://google.com/recovery returned <Response [200]>
+https://google.com/views returned <Response [200]>
+https://google.com/fiber returned <Response [200]>
+https://google.com/scholar returned <Response [200]>
+https://google.com/finance returned <Response [200]>
+https://google.com/firebase returned <Response [200]>
+https://google.com/registry returned <Response [200]>
+https://google.com/voice returned <Response [200]>
+https://google.com/fit returned <Response [200]>
+https://google.com/related returned <Response [200]>
+https://google.com/script returned <Response [200]>
+https://google.com/vr returned <Response [200]>
+https://google.com/search returned <Response [200]>
+https://google.com/security returned <Response [200]>
+https://google.com/research returned <Response [200]>
+https://google.com/local returned <Response [200]>
+https://google.com/retail returned <Response [200]>
+https://google.com/logos returned <Response [200]>
+https://google.com/forms returned <Response [200]>
+https://google.com/loon returned <Response [200]>
+https://google.com/services returned <Response [200]>
+https://google.com/friends returned <Response [200]>
+https://google.com/sheets returned <Response [200]>
+https://google.com/romance returned <Response [200]>
+https://google.com/investor returned <Response [200]>
+https://google.com/io returned <Response [200]>
+https://google.com/shopping returned <Response [200]>
+https://google.com/sky returned <Response [200]>
+https://google.com/spaces returned <Response [200]>
+-------------------------------------------------------------------
+File saved successfuly
+```
+
 
 ## Credits:
 - Two wordlists have been included in this repo, they are "google-10000-english.txt" and "20k.txt".
